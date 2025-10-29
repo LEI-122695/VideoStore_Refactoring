@@ -1,13 +1,11 @@
 package v0;
 
-import v3.Movie;
-
 public class Rental
 {
-    private v3.Movie _movie;
+    private Movie	_movie;
     private int		_daysRented;
 
-    public Rental(v3.Movie movie, int daysRented)
+    public Rental(Movie movie, int daysRented)
     {
         _movie = movie;
         _daysRented = daysRented;
@@ -45,5 +43,10 @@ public class Rental
                 break;
         }
         return result;
+    }
+
+    public int getFrequentRentalPoints()
+    {
+        return (getMovie().getPriceCode() == Movie.Code.NEW_RELEASE) && getDaysRented() > 1 ? 2 : 1;
     }
 }

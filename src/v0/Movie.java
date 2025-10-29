@@ -5,9 +5,9 @@ public class Movie {
     public enum Code {REGULAR, CHILDRENS, NEW_RELEASE};
 
     private String _title;
-    private v3.Movie.Code _priceCode;
+    private Code _priceCode;
 
-    public Movie(String title, v3.Movie.Code priceCode) {
+    public Movie(String title, Code priceCode) {
         _title = title;
         _priceCode = priceCode;
     }
@@ -16,7 +16,7 @@ public class Movie {
         return _title;
     }
 
-    public v3.Movie.Code getPriceCode() {
+    public Code getPriceCode() {
         return _priceCode;
     }
 }
