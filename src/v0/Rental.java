@@ -1,13 +1,11 @@
 package v0;
 
-import v9.Movie;
-
 public class Rental
 {
-    v9.Movie _movie;
+    Movie	_movie;
     private int		_daysRented;
 
-    public Rental(v9.Movie movie, int daysRented)
+    public Rental(Movie movie, int daysRented)
     {
         _movie = movie;
         _daysRented = daysRented;
