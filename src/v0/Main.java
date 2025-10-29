@@ -1,5 +1,13 @@
 package v0;
 
+import v9.ChildrensPrice;
+import v9.Customer;
+import v9.Movie;
+import v9.NewReleasePrice;
+import v9.Price;
+import v9.RegularPrice;
+import v9.Rental;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,23 +18,24 @@ import java.io.PrintWriter;
  ***********************************************************/
 public abstract class Main
 {
+
     /***********************************************************
      * @param args
      * @throws IOException
      ***********************************************************/
     public static void main(String[] args) throws IOException
     {
-        Price regularPrice = new Price(Price.Code.REGULAR);
-        Price childrensPrice = new Price(Price.Code.CHILDRENS);
-        Price newReleasePrice = new Price(Price.Code.NEW_RELEASE);
+        v9.Price regularPrice = new RegularPrice();
+        v9.Price childrensPrice = new ChildrensPrice();
+        Price newReleasePrice = new NewReleasePrice();
 
-        Customer who = new Customer("Barack Obama");
-        Movie m1 = new Movie("Life of Amalia", regularPrice);
-        Movie m2 = new Movie("Peter Pan", childrensPrice);
-        Movie m3 = new Movie("Donna del Lago", newReleasePrice);
+        v9.Customer who = new Customer("Barack Obama");
+        v9.Movie m1 = new v9.Movie("Life of Amalia", regularPrice);
+        v9.Movie m2 = new v9.Movie("Peter Pan", childrensPrice);
+        v9.Movie m3 = new Movie("Donna del Lago", newReleasePrice);
 
-        who.addRental(new Rental(m1, 1));
-        who.addRental(new Rental(m2, 2));
+        who.addRental(new v9.Rental(m1, 1));
+        who.addRental(new v9.Rental(m2, 2));
         who.addRental(new Rental(m3, 3));
         System.out.println( who.statement());
 
