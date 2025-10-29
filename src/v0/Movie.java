@@ -1,13 +1,11 @@
 package v0;
 
-import v9.Price;
-
 public class Movie {
 
     private String _title;
-    private v9.Price _price;
+    private Price	_price;
 
-    public Movie(String title, v9.Price price) {
+    public Movie(String title, Price price) {
         _title = title;
         _price = price;
     }
