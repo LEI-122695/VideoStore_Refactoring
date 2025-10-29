@@ -1,20 +1,25 @@
 package v0;
-//vr gwerge
+
 public class Price
 {
     public enum Code {REGULAR, CHILDRENS, NEW_RELEASE}
 
-    public Code	_priceCode;
+    public Code	_code;
 
-    public Price()
+    public Price(Code code)
     {
+        _code = code;
     }
 
-    public double getRentalAmount(Movie movie, int duration)
+    public Code getCode() {
+        return _code;
+    }
+
+    public double getRentalAmount(int duration)
     {
         double result = 0;
 
-        switch (_priceCode)
+        switch (_code)
         {
             case REGULAR:
                 result += 2;
@@ -32,4 +37,10 @@ public class Price
         }
         return result;
     }
+
+    public int getFrequentRentalPoints(int duration)
+    {
+        return (_code == Code.NEW_RELEASE) && duration > 1 ? 2 : 1;
+    }
 }
+
