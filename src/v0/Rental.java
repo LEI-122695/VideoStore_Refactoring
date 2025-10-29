@@ -1,24 +1,26 @@
 package v0;
 
+import v6.Movie;
+
 public class Rental
 {
-    private Movie	_movie;
+    private v6.Movie _movie;
     private int		_daysRented;
 
-    public Rental(Movie movie, int daysRented)
+    public Rental(v6.Movie m1, int daysRented)
     {
-        _movie = movie;
+        _movie = m1;
         _daysRented = daysRented;
+    }
+
+    public v6.Movie getMovie()
+    {
+        return _movie;
     }
 
     public int getDaysRented()
     {
         return _daysRented;
-    }
-
-    public Movie getMovie()
-    {
-        return _movie;
     }
 
     public double getAmount()
